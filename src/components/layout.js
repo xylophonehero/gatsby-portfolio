@@ -1,18 +1,18 @@
-/**
- * Layout component that queries for data
- * with Gatsby's useStaticQuery component
- *
- * See: https://www.gatsbyjs.com/docs/use-static-query/
- */
-
-import * as React from "react"
-import PropTypes from "prop-types"
+import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
+import { motion, AnimatePresence } from 'framer-motion';
+import
+{
+  Box,
+} from "@chakra-ui/layout"
 
 import Header from "./header"
-import "./layout.css"
+import { Flex } from "@chakra-ui/layout"
+import Stars from "./Stars"
+import Fonts from "./Fonts"
 
-const Layout = ({ children }) => {
+const Layout = ({ children, location }) =>
+{
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -23,33 +23,59 @@ const Layout = ({ children }) => {
     }
   `)
 
+  const duration = 0.3
+
+  const variants = {
+    initial: {
+      opacity: 0,
+    },
+    enter: {
+      opacity: 1,
+      transition: {
+        duration: duration,
+        delay: duration,
+        when: 'beforeChildren',
+      },
+    },
+    exit: {
+      opacity: 0,
+      transition: { duration: duration },
+    },
+  }
+
   return (
-    <>
+    <Flex flexDir="column" minH="100vh" pos="relative" >
+      <Fonts />
+      <Stars />
       <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
-      <div
+      <Box flexGrow="1" pos="relative">
+        <AnimatePresence>
+          <Box
+            as={motion.main}
+            key={location}
+            variants={variants}
+            initial="initial"
+            animate="enter"
+            exit="exit"
+            overflowX="hidden"
+          >
+            {children}
+          </Box>
+        </AnimatePresence>
+      </Box>
+      <footer
         style={{
-          margin: `0 auto`,
-          maxWidth: 960,
-          padding: `0 1.0875rem 1.45rem`,
+          marginTop: `2rem`,
+          position: 'relative',
         }}
       >
-        <main>{children}</main>
-        <footer
-          style={{
-            marginTop: `2rem`,
-          }}
-        >
-          © {new Date().getFullYear()}, Built with
+        © {new Date().getFullYear()}, Built with
           {` `}
-          <a href="https://www.gatsbyjs.com">Gatsby</a>
-        </footer>
-      </div>
-    </>
+        <a href="https://www.gatsbyjs.com">Gatsby</a>
+      </footer>
+    </Flex >
   )
 }
 
-Layout.propTypes = {
-  children: PropTypes.node.isRequired,
-}
 
 export default Layout
