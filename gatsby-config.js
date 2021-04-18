@@ -3,7 +3,7 @@ require('dotenv').config()
 module.exports = {
   siteMetadata: {
     title: `Nick Worrall | Modern Web Developer`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
+    description: `I create beautiful and functional websites using React, JavaScript, Node.js, Gatsby,js, Next.js, WordPress and many other tools.`,
     author: `@gatsbyjs`,
   },
   plugins: [
