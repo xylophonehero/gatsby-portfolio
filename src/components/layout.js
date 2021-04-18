@@ -3,7 +3,7 @@ import { useStaticQuery, graphql } from "gatsby"
 import { motion, AnimatePresence } from 'framer-motion';
 import
 {
-  Box,
+  Box, Text,
 } from "@chakra-ui/layout"
 
 import Header from "./header"
@@ -43,36 +43,37 @@ const Layout = ({ children, location }) =>
     },
   }
 
+
   return (
     <Flex flexDir="column" minH="100vh" pos="relative" >
       <Fonts />
       <Stars />
       <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
-      <Box flexGrow="1" pos="relative">
+      <Box flexGrow="1">
         <AnimatePresence>
           <Box
             as={motion.main}
-            key={location}
+            key={location.pathname}
             variants={variants}
             initial="initial"
             animate="enter"
             exit="exit"
             overflowX="hidden"
+            h="full"
           >
             {children}
           </Box>
         </AnimatePresence>
       </Box>
-      <footer
-        style={{
-          marginTop: `2rem`,
-          position: 'relative',
-        }}
+      <Flex
+        as="footer"
+        pos="relative"
+        justify="center"
       >
-        © {new Date().getFullYear()}, Built with
-          {` `}
-        <a href="https://www.gatsbyjs.com">Gatsby</a>
-      </footer>
+        <Text mb="4">
+          © {new Date().getFullYear()}, Built with Gatsby and Contentful
+        </Text>
+      </Flex>
     </Flex >
   )
 }

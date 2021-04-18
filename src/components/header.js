@@ -23,10 +23,10 @@ function NavBar({ logo })
         to="/"
       >
 
-        <Box pos="relative" w={["100px", "120px", "100px", "140px"]}>
+        <Box pos="relative" w={["200px", "200px", "200px", "200px"]}>
 
           {/* <GatsbyImage image={getImage(logo)} alt="Annie Frances Art logo" objectFit="contain" /> */}
-          <Heading fontSize="sm">NICK WORRALL</Heading>
+          <Heading fontSize="lg">{"<NICK WORRALL/>"}</Heading>
         </Box>
       </Link>
       <Spacer />
@@ -132,9 +132,8 @@ const MenuLinks = ({ menu, onClose }) =>
       ))} */}
 
       <MenuItem to="/about">About</MenuItem>
-      <MenuItem to="/my-mission">My Mission</MenuItem>
-      <MenuItem to="/faqs">FAQs</MenuItem>
-      <MenuItem to="/paintings">Paitings</MenuItem>
+      <MenuItem to="/services">Services</MenuItem>
+      <MenuItem to="/portfolio">Portfolio</MenuItem>
       <MenuItem to="/testimonials">Testimonails</MenuItem>
       <MenuItem to="/contact">Contact</MenuItem>
 
@@ -157,8 +156,8 @@ const NavBarContainer = ({ children, ...props }) =>
       zIndex="2"
       // zIndex="sticky"
       // mb={8}
-      p={2}
-      bgGradient="linear(to-r, gray.100, gray.200)"
+      p={4}
+      bgGradient="linear(to-b, gray.50, gray.400)"
       color="gray.600"
       {...props}
     >

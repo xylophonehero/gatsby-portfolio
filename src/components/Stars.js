@@ -30,25 +30,10 @@ function Stars(props)
             },
             move: {
               random: true,
-              speed: 0.5,
+              speed: 0.6,
               outMode: "out",
             }
           },
-          // interactivity: {
-          //   events: {
-          //     onhover: {
-          //       enable: true,
-          //       mode: "bubble"
-          //     }
-          //   },
-          //   modes: {
-          //     bubble: {
-          //       distance: 250,
-          //       duration: 2,
-          //       size: 50,
-          //     }
-          //   }
-          // }
         }}
       />
     </Box>

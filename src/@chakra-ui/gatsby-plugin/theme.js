@@ -11,7 +11,8 @@ const theme = extendTheme({
     }
   },
   fonts: {
-    heading: "Source Code Pro"
+    heading: "Source Code Pro",
+    body: "Roboto",
   },
   components: {
     Container: {
@@ -27,7 +28,7 @@ const theme = extendTheme({
     },
     Link: {
       baseStyle: {
-        color: "green.700",
+        color: "white",
         fontWeight: "semibold",
         ":focus": {
           boxShadow: "none"
