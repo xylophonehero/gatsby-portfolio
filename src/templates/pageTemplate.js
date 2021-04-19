@@ -39,6 +39,13 @@ export const query = graphql`query pageQuery($slug: String) {
         ... on ContentfulContactForm {
           contentful_id
         }
+        ... on ContentfulCta {
+          contentful_id
+          buttonText
+          pageRef {
+            slug
+          }
+        }
         ... on ContentfulServiceBlock {
           contentful_id
           services {

@@ -1,6 +1,7 @@
 import React from 'react';
 import BlockColumns from './Blocks/BlockColumns';
 import ContactForm from './Blocks/ContactForm';
+import Cta from './Blocks/CTA';
 import IconBlocks from './Blocks/IconBlocks';
 import ImageText from './Blocks/ImageText';
 import PortfolioItem from './Blocks/PortfolioItem';
@@ -31,6 +32,9 @@ function BlockSorter({ block })
 
     case "ContentfulTestimonial":
       return <Testimonial  {...block} />
+
+    case "ContentfulCta":
+      return <Cta  {...block} />
 
     default:
       return <p>Block not rendered</p>
