@@ -134,7 +134,7 @@ const MenuLinks = ({ menu, onClose }) =>
       <MenuItem to="/about">About</MenuItem>
       <MenuItem to="/services">Services</MenuItem>
       <MenuItem to="/portfolio">Portfolio</MenuItem>
-      <MenuItem to="/testimonials">Testimonails</MenuItem>
+      <MenuItem to="/testimonials">Testimonials</MenuItem>
       <MenuItem to="/contact">Contact</MenuItem>
 
     </Stack>

@@ -12,7 +12,7 @@ function PageTemplate({ data })
 
     <Container my="16">
       <Seo title={data.contentfulPage.title} />
-      <Heading fontSize="6xl" textAlign="center" textTransform="uppercase">{data.contentfulPage.title}</Heading>
+      <Heading fontSize={["4xl", "6xl"]} textAlign="center" textTransform="uppercase">{data.contentfulPage.title}</Heading>
       {renderRichText(data.contentfulPage.body, {
         renderNode: {
           [BLOCKS.EMBEDDED_ENTRY]: node => (
