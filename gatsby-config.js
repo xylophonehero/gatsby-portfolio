@@ -3,8 +3,8 @@ require('dotenv').config()
 module.exports = {
   siteMetadata: {
     title: `Nick Worrall | Modern Web Developer`,
-    description: `I create beautiful and functional websites using React, JavaScript, Node.js, Gatsby,js, Next.js, WordPress and many other tools.`,
-    author: `@gatsbyjs`,
+    description: `I create beautiful and functional websites using React, JavaScript, Gatsby,js, Next.js with the CMS of your choice.`,
+    author: `@xylophonehero`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -32,10 +32,10 @@ module.exports = {
         name: `gatsby-starter-default`,
         short_name: `starter`,
         start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
+        background_color: `#1a202c`,
+        theme_color: `#1a202c`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        icon: `src/images/logo-site.png`, // This path is relative to the root of the site.
       },
     },
     {

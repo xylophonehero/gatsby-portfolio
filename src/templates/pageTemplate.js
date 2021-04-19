@@ -4,13 +4,14 @@ import React from 'react';
 import { BLOCKS } from "@contentful/rich-text-types"
 import { renderRichText } from 'gatsby-source-contentful/rich-text';
 import BlockSorter from '../components/BlockSorter';
-
+import Seo from '../components/seo'
 
 function PageTemplate({ data })
 {
   return (
 
     <Container my="16">
+      <Seo title={data.contentfulPage.title} />
       <Heading fontSize="6xl" textAlign="center" textTransform="uppercase">{data.contentfulPage.title}</Heading>
       {renderRichText(data.contentfulPage.body, {
         renderNode: {
