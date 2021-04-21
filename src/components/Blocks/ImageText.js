@@ -6,8 +6,8 @@ import React from 'react';
 function ImageText({ text, image, imageLeft })
 {
   return (
-    <Flex maxW="80rem" mx="8" my="8">
-      <Box as={GatsbyImage} image={getImage(image)} maxW="24rem" w="full" maxH="30rem" mr="8" rounded="2xl" boxShadow="dark-lg" />
+    <Flex maxW="80rem" mx="8" my="8" flexDir={["column", null, "row"]}>
+      <Box as={GatsbyImage} image={getImage(image)} maxW="24rem" w="full" maxH="30rem" mr="8" rounded="2xl" boxShadow="dark-lg" mb="8" />
       <Box className="content">
         {renderRichText(text)}
       </Box>

@@ -18,9 +18,9 @@ import { FaEnvelope, FaGithub, FaLinkedin } from 'react-icons/fa'
 function ContactForm(props)
 {
   return (
-    <VStack spacing="8" my="8" >
-      <Text fontSize="2xl" fontWeight="semibold">Interested in working with me?</Text>
-      <Text fontSize="xl">Fill out the form below or contact me on social media and I'll get back to you as soon as possible</Text>
+    <VStack spacing="8" my="8">
+      <Text px="4" fontSize="2xl" fontWeight="semibold">Interested in working with me?</Text>
+      <Text px="4" fontSize="xl">Fill out the form below or contact me on social media and I'll get back to you as soon as possible</Text>
       <HStack spacing="8" fontSize="4xl" >
         <Link href="mailto:nick@nickworrall.co.uk" isExternal _hover={{ textColor: "gray.400" }}>{<FaEnvelope />}</Link>
         <Link href="https://www.linkedin.com/in/nick-worrall-1940981ab/" isExternal _hover={{ textColor: "gray.400" }}>{<FaLinkedin />}</Link>
@@ -32,7 +32,8 @@ function ContactForm(props)
         method="post"
         netlify-honeypot="bot-field"
         data-netlify="true"
-        minW="48rem"
+        maxW="48rem"
+        w="100vw"
         bg="gray.800"
         p="4"
         rounded="xl"
